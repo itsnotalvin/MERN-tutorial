@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import 'dotenv/config';
 import { Book } from "./models/bookModel.js";
 import booksRoute from './routes/booksRoutes.js'
+import cors from 'cors'
 
 const app = express();
 
@@ -11,6 +12,18 @@ const { mongoDBURL } = config;
 
 // Middleware for parsing request body
 app.use(express.json());
+
+
+// Allow origins with default of cors(*)
+// app.use(cors())
+//Custom origins
+app.use(
+    cors({
+        origin: 'http://localhost:3000',
+        methods: ['GET', 'POST', 'PUT', 'DELETE'],
+        allowedHeaders: ['Content-Type'],
+    })
+)
 
 if (!mongoDBURL) {
     throw new Error('mongoDBURL is not defined. Check your env file and configuration')
