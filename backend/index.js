@@ -15,15 +15,15 @@ app.use(express.json());
 
 
 // Allow origins with default of cors(*)
-// app.use(cors())
+app.use(cors())
 //Custom origins
-app.use(
-    cors({
-        origin: 'http://localhost:3000',
-        methods: ['GET', 'POST', 'PUT', 'DELETE'],
-        allowedHeaders: ['Content-Type'],
-    })
-)
+// app.use(
+//     cors({
+//         origin: 'http://localhost:3000',
+//         methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//         allowedHeaders: ['Content-Type'],
+//     })
+// )
 
 if (!mongoDBURL) {
     throw new Error('mongoDBURL is not defined. Check your env file and configuration')
