@@ -29,3 +29,10 @@ to install tailwindcss ref: https://tailwindcss.com/docs/installation/using-post
 > npm install -D tailwindcss postcss autoprefixer
 
 > npx tailwindcss init -p
+
+install react router
+> npm i react-router-dom
+
+
+
+>npm i axios react-icons
