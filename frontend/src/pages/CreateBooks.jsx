@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import BackButton from '../../components/BackButton.jsx';
 import Spinner from '../../components/Spinner.jsx';
 import axios from 'axios';
@@ -47,11 +47,10 @@ const CreateBooks = () => {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             className='border-2 border-gray-500 px-4 py-2 w-full'
+            required
           />
-        </div>
-      </div>
-      
-        <div className='flex flex-col border-2 border-sky-400 rounded-xl w-[600px] p-4 mx-auto'>
+        </div>   
+           
         <div className='my-4'>
           <label className='text-xl mr-4 text-gray-500'>Author</label>
           <input 
@@ -59,11 +58,10 @@ const CreateBooks = () => {
             value={author}
             onChange={(e) => setAuthor(e.target.value)}
             className='border-2 border-gray-500 px-4 py-2 w-full'
+            required
           />
-        </div>
-      </div>
-      
-        <div className='flex flex-col border-2 border-sky-400 rounded-xl w-[600px] p-4 mx-auto'>
+        </div>    
+              
         <div className='my-4'>
           <label className='text-xl mr-4 text-gray-500'>Publish Year</label>
           <input 
@@ -71,14 +69,19 @@ const CreateBooks = () => {
             value={publishYear}
             onChange={(e) => setPublishYear(e.target.value)}
             className='border-2 border-gray-500 px-4 py-2 w-full'
+            required
+            min="0000"
+            max="9999"
           />
         </div>
+      
+        <button 
+          className='p-2 bg-sky-300 m-8' 
+          type='submit'
+          onClick={handleSaveBook}>
+          Save
+        </button>
       </div>
-
-      <button className='p-2 bg-sky-300 m-8' onClick={handleSaveBook}>
-        Save
-      </button>
-
     </div>
 
   )
