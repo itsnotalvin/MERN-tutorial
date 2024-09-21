@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { PiBookOpenTextLight } from 'react-icons/pi'
-import { BiInfoCircle, BiUserCircle } from 'react-icons/bi'
+import { BiUserCircle } from 'react-icons/bi'
 import { AiOutlineEdit } from 'react-icons/ai';
 import { BsInfoCircle } from 'react-icons/bs';
 import { MdOutlineDelete } from 'react-icons/md';
@@ -14,6 +14,7 @@ const BookCard = ({ books }) => {
                 <div
                     key={item._id}
                     className='border-2 border-gray-500 rounded-lg px-4 py-4 m-4 relative hover:shadow-xl'
+                    id='bookCard'
                 >
                     <h2 className='absolute top-1 right-2 px-4 py-1 bg-red-300 rounded-lg'>
                         {item.publishYear}
@@ -27,7 +28,7 @@ const BookCard = ({ books }) => {
                         <BiUserCircle className='text-red-300 text-2xl' />
                         <h2 className='my-1'>{item.author}</h2>
                     </div>
-                    <div className='flex justify-around mt-4'>
+                    <div className='flex justify-between itemes-center gap-x-2 p-4 mt-4'>
                         <Link to={`/books/details/${item._id}`}>
                             <BsInfoCircle className='text-2xl text-green-800 hover:text-black' />
                         </Link>
