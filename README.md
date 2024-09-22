@@ -36,3 +36,7 @@ install react router
 
 
 >npm i axios react-icons
+
+
+## Alert library 
+### notistack - https://notistack.com/
