@@ -40,3 +40,4 @@ install react router
 
 ## Alert library 
 ### notistack - https://notistack.com/
+> npm i notistack
